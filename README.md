@@ -19,6 +19,9 @@ $ composer require double-star-systems/zxcvbn-symfony
 ```
 
 ## Usage
+
+The constrint can be attached to an entity field using an annotation.
+
 ```php
 use DoubleStarSystems\ZxcvbnSymfony\Constraint\PasswordStrength;
 
@@ -35,6 +38,25 @@ You may simply use the simpler `@PasswordStrength(3)` form for a minimum
 password score of `3`, if you don't need a custom message.  
 More information on validation with Symfony validator can be found in
 [the documentation](http://symfony.com/doc/current/book/validation.html).
+
+Alternatively, the constraint can be added directly to form fields.
+
+```php
+use DoubleStarSystems\ZxcvbnSymfony\Constraint\PasswordStrength;
+use Symfony\Component\Form\Extension\Core\Type\PasswordType;
+
+public function buildForm(FormBuilderInterface $builder, array $options)
+{
+    $builder
+        ->add('password', PasswordType::class, [
+            'required' => true,
+            'constraints' => [
+                new PasswordStrength(['min_score' => 3]),
+            ],
+        ])
+    ;
+}
+```
 
 ## Score
 The score is an integer from 0-4 (you can mentally represent it as a strength bar)
