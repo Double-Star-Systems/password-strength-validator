@@ -1,11 +1,11 @@
 {
-    "name": "mdarse/password-strength-validator",
+    "name": "double-star-systems/zxcvbn-symfony",
     "description": "Password strength validator for Symfony framework. Based on Dropbox's zxcvbn project.",
     "license": "MPL-2.0",
     "authors": [
         {
-            "name": "Mathieu Darse",
-            "email": "hello@mathieudarse.fr"
+            "name": "Richard Gerdes",
+            "email": "rich@richgerdes.com"
         }
     ],
     "require": {
@@ -17,7 +17,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Darse\\PasswordStrengthValidator\\": "src/"
+            "DoubleStarSystems\\ZxcvbnSymfony\\": "src/"
         }
     }
 }

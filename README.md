@@ -1,4 +1,5 @@
-# Password strength validator
+# Zxcvbn Symfony Bundle
+
 Password strength constraint for Symfony validator component.
 Based on the [zxcvbn project](https://blogs.dropbox.com/tech/2012/04/zxcvbn-realistic-password-strength-estimation/)
 from Dropbox and @lowe, this is using [zxcvbn-php](https://github.com/bjeavons/zxcvbn-php)
@@ -12,13 +13,14 @@ dates, repeats (aaa), sequences (abcd), and QWERTY patterns.
 ## Installation
 
 The library can be installed with [Composer](http://getcomposer.org) by adding it as a dependency to your composer.json file.
+
 ```
-$ composer require "mdarse/password-strength-validator"
+$ composer require double-star-systems/zxcvbn-symfony
 ```
 
 ## Usage
 ```php
-use Darse\PasswordStrengthValidator\Constraint\PasswordStrength;
+use DoubleStarSystems\ZxcvbnSymfony\Constraint\PasswordStrength;
 
 class User
 {
@@ -28,6 +30,7 @@ class User
     private $password;
 }
 ```
+
 You may simply use the simpler `@PasswordStrength(3)` form for a minimum
 password score of `3`, if you don't need a custom message.  
 More information on validation with Symfony validator can be found in
@@ -46,3 +49,7 @@ This Source Code Form is subject to the terms of the Mozilla Public
 License, v. 2.0. If a copy of the MPL was not distributed with this
 file, You can obtain one at http://mozilla.org/MPL/2.0/.  
 See the [complete license](LICENSE).
+
+This project is a fork of Mathieu Darse's [Password Strength
+Validator](https://github.com/mdarse/password-strength-validator) which is no
+longer in active development.
